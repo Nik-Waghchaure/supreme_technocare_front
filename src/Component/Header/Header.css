@@ -1,0 +1,120 @@
+#Appbar {
+  background-color: var(--white) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px !important;
+  /* position: static !important; */
+}
+
+/* #sticky-appbar{
+position: sticky !important;
+top: 0px !important;
+} */
+
+.sm-toolbar {
+  min-height: 30px !important;
+}
+
+.Appbar_height {
+  min-height: 50px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+.appbar_logo {
+  height: 45px !important;
+}
+
+.menus {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--content) !important;
+  text-transform: none !important;
+  margin: 0px 3px !important;
+}
+
+.menus:hover {
+  background-color: inherit !important;
+  color: var(--col1) !important;
+}
+
+
+
+.MuiDrawer-paper {
+  /* background-color: #f2f2f2 !important; */
+}
+
+
+
+/* Accordian CSS Started */
+
+.MuiAccordion-root {
+  background-color: inherit !important;
+}
+
+
+.Mui-expanded {
+  margin: 0px !important;
+}
+
+.MuiAccordionSummary-root.Mui-expanded {
+  min-height: 40px !important;
+}
+
+.MuiAccordionSummary-root {
+  min-height: 40px !important;
+}
+
+.mobileviewmenu {
+  display: block !important;
+}
+
+.desktopviewmenu {
+  display: block !important;
+}
+
+@media (max-width: 767px) {
+  .desktopviewmenu {
+    display: none !important;
+  }
+}
+
+@media (min-width: 767px) {
+  .mobileviewmenu {
+    display: none !important;
+  }
+}
+
+
+.active .menus {
+  font-weight: 700 !important;
+  color: var(--col1) !important;
+}
+
+
+.inq_btn {
+  background-color: var(--col1) !important;
+  border-radius: 2px solid var(--col1) !important;
+  padding: 4px 22px !important;
+  padding-left: 16px !important;
+  color: var(--white) !important;
+  border-radius: 16px !important;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
+.inq_btn:hover {
+  background-color: var(--col2) !important;
+  border-color: var(--col2) !important;
+  color: var(--white) !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
+}
+
+
+
+.logo {
+    height: auto !important;
+    width: 180px !important;
+    background: #000 !important;
+    padding: 0px 6px !important;
+    border-radius: 6px !important;
+}

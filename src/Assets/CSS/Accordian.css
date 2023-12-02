@@ -1,0 +1,148 @@
+#main_accordian .MuiAccordionSummary-content {
+    margin: 4px !important;
+}
+
+#main_accordian .MuiIconButton-root {
+    padding: 0px 5px !important;
+}
+
+#main_accordian .MuiAccordionSummary-root {
+    padding: 7px 10px !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+
+#main_accordian .main_accordian_head {
+    border-radius: 5px !important;
+    border: none !important;
+}
+
+#main_accordian .MuiCollapse-wrapperInner {
+    background-color: #d9d9d9 !important;
+}
+
+#main_accordian .main_acc_details {
+    padding: 8px 6px !important;
+    border-radius: 4px !important;
+    border-radius: 4px !important;
+    border: 2px solid var(--col1) !important;
+    margin-top: 6px;
+    max-height: 40vh !important;
+    overflow: auto !important;
+    text-align: left !important;
+    background-color: #f2f2f2 !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+#main_accordian .MuiAccordion-root {
+    border-radius: 4px !important;
+    background-color: var(--white) !important;
+}
+
+#main_accordian .MuiAccordion-root::before {
+    display: none !important;
+}
+
+
+
+#main_accordian .Mui-expanded {
+    background-color: var(--col1) !important;
+    color: var(--white) !important;
+    box-shadow: none !important;
+}
+
+
+.nest_acc_divider {
+    border: none;
+    height: 2px !important;
+    margin: 0px 0px !important;
+    margin-top: 5px !important;
+    flex-shrink: 0;
+    background-color: #fff !important;
+}
+
+
+.nst_wdt {
+    width: 100% !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+#Nested_Accordian .MuiAccordion-root {
+    width: 100% !important;
+    background-color: #f2f2f2 !important;
+    box-shadow: none !important;
+}
+
+#Nested_Accordian .MuiAccordionSummary-root {
+    padding: 0px !important;
+    box-shadow: none !important;
+}
+
+
+
+
+#Nested_Accordian .Mui-expanded {
+    background-color: #f2f2f2 !important;
+    color: var(--col1) !important;
+}
+
+#Nested_Accordian .MuiAccordionSummary-content {
+    margin: 0px !important;
+}
+
+
+.nest_acc_details {
+    padding: 2px 2px 2px 21px !important;
+    max-height: auto !important;
+    border-radius: none !important;
+}
+
+
+
+.nest_acc_head {
+    color: #252525 !important;
+}
+
+
+#main_accordian .MuiSvgIcon-root {
+    height: 15px !important;
+    width: 15px !important;
+}
+
+
+#main_accordian .Mui-checked {
+    color: var(--col1) !important;
+}
+
+
+#Nested_Accordian .nest_acc_details .Mui-checked {
+    color: var(--col2) !important;
+}
+
+
+
+
+/* New css added for the list item button used in the mapping */
+
+.MuiListItemButton-root {
+    font-size: 13px !important;
+    padding: 2px !important;
+}
+
+.MuiListItemText-root {
+    font-size: 13px !important;
+    color: var(--content) !important;
+    font-weight: 500 !important;
+}
+
+.MuiListItemText-primary {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+
+
+.active .MuiListItemText-root {
+    color: var(--col2) !important;
+}

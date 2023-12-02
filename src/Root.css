@@ -1,0 +1,21 @@
+@import url('./Styles.css');
+@import url('./Assets/CSS/PrimaryTabbed.css');
+@import url('./Assets/CSS/Textfields.css');
+@import url('./Assets/CSS/Accordian.css');
+@import url('./Assets/CSS/ReactCarousel.css');
+@import url('./Assets/CSS/Solutions.css');
+
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --gry: #6d6d6d;
+  --grn: green;
+  --red: #f00;
+  --yellow: #fca510;
+
+  --col1: #252525;
+  --col2: #d3ab6e;
+  --content: #696969;
+  --secbg2: #f2f2f2;
+}

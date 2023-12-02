@@ -1,0 +1,63 @@
+.primarytabbed .MuiTabs-scrollButtonsDesktop {
+    display: block !important;
+    display: inline-flex !important;
+    color: var(--col1) !important;
+}
+
+.primarytabbed .tabbedbar {
+    background-color: transparent !important;
+    box-shadow: none !important;
+
+}
+
+.primarytabbed .MuiTab-root {
+    width: auto !important;
+    background: var(--white) !important;
+    margin-right: 6px !important;
+    color: var(--content) !important;
+    font-size: 11px !important;
+    min-height: auto !important;
+    min-width: auto !important;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    text-transform: capitalize !important;
+    position: relative;
+    padding: 6px 13px;
+    margin-top: 10px !important;
+}
+
+.primarytabbed .ltchild {
+    padding-right: 15px;
+}
+
+.primarytabbed .MuiTab-root .MuiSvgIcon-root {
+    position: absolute;
+    right: 4px;
+    width: 18px;
+    top: 6px;
+}
+
+.primarytabbed .MuiTabs-root {
+    display: flex;
+    overflow: hidden;
+    min-height: 30px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.primarytabbed .Mui-selected {
+    color: var(--white) !important;
+    background: var(--col1) !important;
+}
+
+.primarytabbed .MuiBox-root {
+    padding: 5px 0px;
+}
+
+.sti {
+    position: sticky;
+    top: 50px !important;
+    z-index: 99;
+    background-color: #EAEAEA !important;
+    padding-bottom: 0px;
+    border-bottom: 4px solid var(--col1);
+}
