@@ -1,10 +1,9 @@
-import React, {useState} from 'react'
-import ParticlesBgDesign from '../../Component/Particles_Bg_Design'
-import { Box, Container, Grid, Breadcrumbs, Typography, TextField, Button, Snackbar } from '@mui/material';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import ParticlesBgDesign from '../../Component/Particles_Bg_Design';
 import DynamicBreadcrumbs from '../../Component/DynamicBreadcrumbs';
-import ExploreUs from '../../Component/ExploreUs';
+import { TextField, Button, Box, Container, Grid, Typography, Snackbar } from '@mui/material';
 import HeadingBottom from '../../Component/HeadingBottom';
+import ExploreUs from '../../Component/ExploreUs';
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -13,42 +12,14 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-
 
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
-import ContactFormSection from './ContactFormSection';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-
-
-
-
-
-const validationSchema = Yup.object({
-  fullName: Yup.string()
-    .required('Full Name is required')
-    .max(50, 'Full Name must be at most 50 characters'),
-  emailAddress: Yup.string()
-    .required('Email Address is required')
-    .email('Invalid email address')
-    .max(100, 'Email Address must be at most 100 characters'),
-  mobileNumber: Yup.string()
-    .required('Mobile Number is required')
-    .matches(/^[0-9]+$/, 'Invalid mobile number')
-    .max(15, 'Mobile Number must be at most 15 characters'),
-  message: Yup.string()
-    .max(500, 'Message must be at most 500 characters'),
-});
 
 
 
 const ContactUs = () => {
+
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
@@ -57,55 +28,56 @@ const ContactUs = () => {
     setOpenSnackbar(false);
   };
 
-  const onSubmit = async (values) => {
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
-      // 'http://localhost:8888/api/v1/contact-us-form/'
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/contact-us-form/`, {
+      const response = await fetch('http://localhost:8888/api/v1/contact-us-form/', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(values),
+        body: JSON.stringify(formData)
       });
-  
+
       if (response.ok) {
-        setSnackbarMessage('Contact information saved successfully');
-        setOpenSnackbar(true);
-        formik.resetForm();
-      } else {
         const data = await response.json();
-        setSnackbarMessage(data.detail);
+        // alert(data.message); // Assuming the backend sends a message in the response
+        setSnackbarMessage(data.message);
+        setOpenSnackbar(true);
+        setFormData({ name: '', email: '', mobile: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        // alert(errorData.detail); // Log the error detail
+        setSnackbarMessage(errorData.detail);
         setOpenSnackbar(true);
       }
     } catch (error) {
-      setSnackbarMessage('An error occurred while saving contact information');
+      console.error('Error:', error);
+      // alert('Failed to send email. Please try again later.');
+      setSnackbarMessage('Failed to send email. Please try again later.');
       setOpenSnackbar(true);
     }
   };
 
 
-
-  const formik = useFormik({
-    initialValues: {
-      fullName: '',
-      emailAddress: '',
-      mobileNumber: '',
-      message: '',
-    },
-    validationSchema: validationSchema,
-    onSubmit: onSubmit,
-  });
-
-  const handleBlur = (field) => (event) => {
-    formik.handleBlur(event);
-    formik.setFieldTouched(field, true);
-  };
-
-
-
-
   return (
     <>
+
 
 
       <Box className="subpage_section secbg2" component='section'>
@@ -127,6 +99,9 @@ const ContactUs = () => {
             </Grid>
           </Container>
         </Box>
+
+
+
 
 
 
@@ -160,6 +135,8 @@ const ContactUs = () => {
 
 
 
+
+
             <Box mt={4}>
               <Grid container spacing={0} alignItems="flex-start" justifyContent='center' style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px' }} >
 
@@ -175,7 +152,16 @@ const ContactUs = () => {
                               <LocationOnIcon className="col2" />
                             </Avatar>
                           </ListItemAvatar>
-                          <ListItemText primary="Address" secondary="592 Grady Trail, Dubai, Massachusetts" />
+                          <ListItemText primary="Address" secondary={
+                            <a
+                              href="https://www.google.com/maps?q=Aryavarta,Mahale Farm, Cidco, Nashik,  Maharshtra(IND)-422009"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className='wh hoverwh'
+                            >
+                              303/306 Aryavarta,Mahale Farm, Cidco, Nashik,  Maharshtra(IND)-422009
+                            </a>
+                          } />
                         </ListItem>
 
 
@@ -186,7 +172,13 @@ const ContactUs = () => {
                               <CallIcon className="col2" />
                             </Avatar>
                           </ListItemAvatar>
-                          <ListItemText primary="Contact Number" secondary="+91 99999 99999" />
+                          <ListItemText primary="Contact Number" secondary={
+                            <>
+                              <a href="tel:+91-98905 61939" className='wh hoverwh'>+91-98905 61939</a>
+                              <br />
+                              <a href="tel:+91-8177800722" className='wh hoverwh'>+91-8177800722</a>
+                            </>
+                          } />
                         </ListItem>
 
 
@@ -196,7 +188,9 @@ const ContactUs = () => {
                               <MailOutlineIcon className="col2" />
                             </Avatar>
                           </ListItemAvatar>
-                          <ListItemText primary="Mail Address" secondary="company_name@domain.com" />
+                          <ListItemText primary="Mail Address" secondary={<>
+                            <a href='mailto:supremetechnocare@gmail.com' className='wh hoverwh'>supremetechnocare@gmail.com</a>
+                          </>} />
                         </ListItem>
 
                       </List>
@@ -209,168 +203,92 @@ const ContactUs = () => {
 
                 <Grid item lg={6} md={6} sm={12} xs={12} className='form-sec'>
                   <Box p={4}>
+                    <form onSubmit={handleSubmit}>
+
+                      <Grid container spacing={2} alignItems="flex-start" justifyContent='center'>
+                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                          <Box className='filled_txtfld_2' mt={1}>
+                            <TextField
+                              name="name"
+                              label="Name"
+                              className='filleddp'
+                              variant="filled"
+                              value={formData.name}
+                              onChange={handleChange}
+                              fullWidth
+                              required
+                            />
+                          </Box>
+                        </Grid>
 
 
-                    {/* <Grid container spacing={2} alignItems="flex-start" justifyContent='center'>
-                      <Grid item lg={12} md={12} sm={12} xs={12}>
-                        <Box className='filled_txtfld_2' mt={1}>
-                          <TextField
-                            id="filled-basic"
-                            className='filleddp'
-                            variant="filled"
-                            label="Full Name"
-                            fullWidth
-                          />
-                        </Box>
+
+                        <Grid item lg={6} md={12} sm={12} xs={12}>
+                          <Box className='filled_txtfld_2' mt={1}>
+                            <TextField
+                              name="email"
+                              type="email"
+                              label="Email"
+                              className='filleddp'
+                              variant="filled"
+                              value={formData.email}
+                              onChange={handleChange}
+                              fullWidth
+                              required
+                            />
+                          </Box>
+                        </Grid>
+
+
+
+                        <Grid item lg={6} md={12} sm={12} xs={12}>
+                          <Box className='filled_txtfld_2' mt={1}>
+                            <TextField
+                              name="mobile"
+                              label="Mobile Number"
+                              className='filleddp'
+                              variant="filled"
+                              value={formData.mobile}
+                              onChange={handleChange}
+                              fullWidth
+                              required
+                            />
+                          </Box>
+                        </Grid>
+
+
+                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                          <Box className='filled_txtfld_2 txtarea' mt={1}>
+                            <TextField
+                              name="message"
+                              label="Message"
+                              className='filleddp'
+                              variant="filled"
+                              multiline
+                              rows={2}
+                              value={formData.message}
+                              onChange={handleChange}
+                              fullWidth
+                              required
+                            />
+                          </Box>
+                        </Grid>
+
+
+                        <Grid item lg={12} md={12} sm={12} xs={12}>
+                          <Box className="al_center">
+                            <Button type="submit" variant="contained" className="rbtn_sm font1">
+                              Submit
+                            </Button>
+                          </Box>
+
+                        </Grid>
+
+
                       </Grid>
 
-                      <Grid item lg={6} md={6} sm={12} xs={12}>
-                        <Box className='filled_txtfld_2' mt={2}>
-                          <TextField
-                            id="filled-basic"
-                            className='filleddp'
-                            variant="filled"
-                            label="Email Address"
-                            fullWidth
-                          />
-                        </Box>
-                      </Grid>
 
-                      <Grid item lg={6} md={6} sm={12} xs={12}>
-                        <Box className='filled_txtfld_2' mt={2}>
-                          <TextField
-                            id="filled-basic"
-                            className='filleddp'
-                            variant="filled"
-                            label="Mobile Number"
-                            fullWidth
-                          />
-                        </Box>
-                      </Grid>
-
-
-                      <Grid item lg={12} md={12} sm={12} xs={12}>
-                        <Box className='filled_txtfld_2 txtarea' mt={2}>
-                          <TextField
-                            id="filled-basic"
-                            className='filleddp'
-                            variant="filled"
-                            label="Message"
-                            multiline
-                            rows={2}
-                            fullWidth
-                          />
-                        </Box>
-                      </Grid>
-
-
-                      <Grid item lg={12} md={12} sm={12} xs={12}>
-                         <Box className="al_center">
-                         <Link to="#">
-                      <Button variant="contained" className='rbtn_sm font1'>
-                        Submit
-                      </Button>
-                    </Link>
-                         </Box>
-                      </Grid>
-
-
-                    </Grid> */}
-
-
-
-                    {/* <ContactFormSection /> */}
-                    <form onSubmit={formik.handleSubmit}>
-        <Grid container spacing={2} alignItems="flex-start" justifyContent='center'>
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Box className='filled_txtfld_2' mt={1}>
-              <TextField
-                id="fullName"
-                name="fullName"
-                className='filleddp'
-                variant="filled"
-                label="Full Name"
-                fullWidth
-                value={formik.values.fullName}
-                onChange={formik.handleChange}
-                onBlur={handleBlur('fullName')}
-                error={formik.touched.fullName && formik.errors.fullName}
-                helperText={formik.touched.fullName && formik.errors.fullName}
-              />
-            </Box>
-          </Grid>
-
-          <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Box className='filled_txtfld_2' mt={2}>
-              <TextField
-                id="emailAddress"
-                name="emailAddress"
-                className='filleddp'
-                variant="filled"
-                label="Email Address"
-                fullWidth
-                value={formik.values.emailAddress}
-                onChange={formik.handleChange}
-                onBlur={handleBlur('emailAddress')}
-                error={formik.touched.emailAddress && formik.errors.emailAddress}
-                helperText={formik.touched.emailAddress && formik.errors.emailAddress}
-              />
-            </Box>
-          </Grid>
-
-          <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Box className='filled_txtfld_2' mt={2}>
-              <TextField
-                id="mobileNumber"
-                name="mobileNumber"
-                className='filleddp'
-                variant="filled"
-                label="Mobile Number"
-                fullWidth
-                value={formik.values.mobileNumber}
-                onChange={formik.handleChange}
-                onBlur={handleBlur('mobileNumber')}
-                error={formik.touched.mobileNumber && formik.errors.mobileNumber}
-                helperText={formik.touched.mobileNumber && formik.errors.mobileNumber}
-              />
-            </Box>
-          </Grid>
-
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Box className='filled_txtfld_2 txtarea' mt={2}>
-              <TextField
-                id="message"
-                name="message"
-                className='filleddp'
-                variant="filled"
-                label="Message"
-                multiline
-                rows={2}
-                fullWidth
-                value={formik.values.message}
-                onChange={formik.handleChange}
-                onBlur={handleBlur('message')}
-                error={formik.touched.message && formik.errors.message}
-                helperText={formik.touched.message && formik.errors.message}
-              />
-            </Box>
-          </Grid>
-
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Box className="al_center">
-              <Button type="submit" variant="contained" className='rbtn_sm font1'>
-                Submit
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-      </form>
-
-
-
-
-
-
+                    </form>
                   </Box>
                 </Grid>
 
@@ -381,10 +299,9 @@ const ContactUs = () => {
 
 
 
+
           </Container>
         </Box>
-
-
 
       </Box>
 
@@ -402,12 +319,13 @@ const ContactUs = () => {
         open={openSnackbar}
         autoHideDuration={5000}
         onClose={handleSnackbarClose}
-        message={snackbarMessage}
+        message={snackbarMessage} // Remove curly braces
       />
 
 
-    </>
-  )
-}
 
-export default ContactUs
+    </>
+  );
+};
+
+export default ContactUs;

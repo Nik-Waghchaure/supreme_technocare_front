@@ -42,9 +42,9 @@ export default function MainFooter() {
 
 
           <Box mt={2} mb={4}>
-            <Grid container spacing={2} justifyContent="flex-start" alignItems="top">
+            <Grid container spacing={2} justifyContent="space-between" alignItems="top">
 
-              <Grid item lg={4} md={4} sm={6} xs={12}>
+              <Grid item lg={4} md={4} sm={5} xs={12}>
                 <Box className="al_left">
 
                   <Box mt={1} mb={2}>
@@ -58,7 +58,7 @@ export default function MainFooter() {
 
 
 
-                  <Box className="footer-social-ico" mt={2} mb={2}>
+                  {/* <Box className="footer-social-ico" mt={2} mb={2}>
 
                     <IconButton className='whatsapp'>
                       <WhatsAppIcon fontSize='medium' />
@@ -75,13 +75,13 @@ export default function MainFooter() {
                     <IconButton className="insta">
                       <InstagramIcon fontSize='medium' />
                     </IconButton>
-                  </Box>
+                  </Box> */}
 
 
                 </Box>
               </Grid>
 
-              <Grid item lg={2} md={2} sm={6} xs={6}>
+              <Grid item lg={2} md={2} sm={3} xs={6}>
                 <Box className="al_left">
                   <Box mt={2} mb={2}>
                     <Typography variant="h4" className='col1 fw6'> Explore Us </Typography>
@@ -102,7 +102,7 @@ export default function MainFooter() {
                   </Box>
 
                   <Box>
-                    <Link to="products/anaesthesia-machine">
+                    <Link to="/products/Anaesthesia%20Machine">
                       <Button
                         variant="text"
                         className='footerlink'
@@ -147,7 +147,7 @@ export default function MainFooter() {
               </Grid>
 
 
-              <Grid item lg={2} md={2} sm={6} xs={6}>
+              {/* <Grid item lg={2} md={2} sm={6} xs={6}>
                 <Box className="al_left">
                   <Box mt={2} mb={2}>
                     <Typography variant="h4" className='col1 fw6'> Useful Links </Typography>
@@ -199,11 +199,11 @@ export default function MainFooter() {
                   </Box>
 
                 </Box>
-              </Grid>
+              </Grid> */}
 
 
 
-              <Grid item lg={4} md={4} sm={6} xs={12}>
+              <Grid item lg={4} md={4} sm={4} xs={12}>
                 <Box className="al_left footer_li">
 
                   <Grid container spacing={2} justifyContent="flex-start" alignItems="top">

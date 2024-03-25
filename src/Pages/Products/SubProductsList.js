@@ -105,19 +105,20 @@ export default function SubProductsList() {
                 {subProductList.map((subProduct) => (
                   <Grid item lg={3} md={3} sm={6} xs={12} key={subProduct.id}>
                     <Box className="product-box">
+                      {console.log(subProduct.sub_category_name)}
                       <Link
-                        to={`/products/${productName}/${subProduct.sub_category_name}`}
+                        to={`/productsdetails/${productName}/?product_name=${subProduct.sub_category_name}`}
                       >
                         <Box className="al_right flx end">
                           <Typography variant="h6" className="prod_id_tag">
                             {" "}
-                            {subProduct.id}{" "}
+                           ST-{subProduct.id}{" "}
                           </Typography>
                         </Box>
                         <Box
                           className="prod_img_bg"
                           style={{
-                            backgroundImage: `url(https://ari-cn.com${subProduct.sub_category_img})`,
+                            backgroundImage: `url(${subProduct.sub_category_img})`,
                           }}
                         ></Box>
                         <Divider />

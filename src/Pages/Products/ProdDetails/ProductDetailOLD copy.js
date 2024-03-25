@@ -15,6 +15,7 @@ import Tab from "@mui/material/Tab";
 // import { Box, Grid, AppBar, Container } from '@mui/material';
 import TechSpecsTable from "./TechSpecsTable";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 
 import DynamicBreadcrumbs from "../../../Component/DynamicBreadcrumbs";
 import Particles_Bg_Design from "../../../Component/Particles_Bg_Design";
@@ -22,7 +23,7 @@ import AddIcon from "@mui/icons-material/Add";
 import CallIcon from "@mui/icons-material/Call";
 import axios from "axios"; // Import axios
 import ProdImg from "../../../Assets/Images/products/prod_1.jpg";
-import { useParams, useLocation, useSearchParams } from "react-router-dom";
+
 import Dialog from "@mui/material/Dialog";
 import MuiDialogTitle from "@mui/material/DialogTitle";
 import MuiDialogContent from "@mui/material/DialogContent";
@@ -32,7 +33,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { useCart } from "../../../Component/Header/CartContext";
 import { toast } from "react-toastify";
-import queryString from "query-string";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -72,27 +73,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 export default function ProductDetail() {
   const location = useLocation();
-  // const { search } = location
-  // const query =  React.useMemo(() => new URLSearchParams(search), [search]);
-  // let query = useQuery();
-  console.log(location.search, "location.pathname");
-  console.log(
-    decodeURIComponent(location.search).replace("?product_name=", ""),
-    "location.search"
-  );
-  console.log(location.search.replace("?product_name=", ""));
-  const queryParams = queryString.parse(location.search); // Parse the query string
-  const productNamess = decodeURIComponent(location.search).replace(
-    "?product_name=",
-    ""
-  );
-  console.log(productNamess, "productNamess");
-  const parmas = useSearchParams();
-  console.log(parmas, "parmas");
-  const subproductName = decodeURIComponent(location.search).replace(
-    "?product_name=",
-    ""
-  );
+  const subproductName = location.pathname.split("/")[3];
   const productName = location.pathname.split("/")[2];
   const prodImgParam = new URLSearchParams(location.search).get("prodImg"); // Get the prodImg parameter from the query string
 
@@ -112,34 +93,24 @@ export default function ProductDetail() {
 
   const [productDetail, setProductDetail] = React.useState([]);
   const [productUrl, setProductUrl] = React.useState("");
-  const [prodID, setProdID] = React.useState("");
   const fetchProductDetails = () => {
     // process.env.REACT_APP_API_URL + `api/v1/sub_category_det/${subproductName}`
-    const data = {
-      product_name: subproductName,
-    };
     axios
-      .post(apiUrl + `/api/v1/sub_category_det/`, data)
+      .post(apiUrl + `/api/v1/sub_category_det/${subproductName}`)
       .then((response) => {
         if (response.data.sub_category_json) {
           setProductDetail(response.data.sub_category_json);
         }
 
-        // let img_path = apiUrl + response.data.sub_category_header1_img;
-        let img_path = response.data.sub_category_header1_img;
+        let img_path = apiUrl + response.data.sub_category_img;
         setProductUrl(img_path);
-
-        let prod_id = response.data.sub_category_id;
-        setProdID(prod_id);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   };
 
-  // const { state, dispatch } = useCart();
-  const { state, dispatch } = useCart(); // Add this line
-
+  const { state, dispatch } = useCart();
   const handleAddToEnquiry = () => {
     // check if product is already in cart
     if (state.cart.includes(subproductName)) {
@@ -203,7 +174,7 @@ export default function ProductDetail() {
             </Container>
           </Box>
 
-          <Container maxWidth="lg"  className="sticky-bx">
+          <Container maxWidth="lg">
             <Box mt={2}>
               <Grid
                 container
@@ -214,16 +185,10 @@ export default function ProductDetail() {
                 <Grid item lg={10} md={10} sm={9} xs={12}>
                   <Box className="prod-detail-data-sec al_center">
                     <Box className="al_left">
-                      <Box className="fx_sb">
-                        <Typography variant="h5" className="col2 fw6">
-                          {" "}
-                          Product{" "}
-                        </Typography>
-                        <Typography variant="h6" className="prod_id_tag">
-                          {" "}
-                          ST-{prodID}
-                        </Typography>
-                      </Box>
+                      <Typography variant="h5" className="col2 fw6">
+                        {" "}
+                        Product{" "}
+                      </Typography>
                       <Typography variant="h3" className="col1 fw6 font1">
                         {" "}
                         {subproductName.replace(/%20/g, " ")}{" "}
@@ -238,6 +203,7 @@ export default function ProductDetail() {
                         onClick={handleAddToEnquiry}
                       >
                         Add to Enquiry
+                       
                       </Button>
 
                       <a href="tel:+91 98905 61939">
@@ -254,42 +220,48 @@ export default function ProductDetail() {
                 </Grid>
 
                 <Grid item lg={2} md={2} sm={3} xs={12}>
-                  <Box
-                    className="prod-detail-img-sec al_center"
-                    sx={{
-                      minHeight: "158px",
-                      alignItems: "center",
-                      display: "flex",
-                    }}
-                  >
+                  <Box className="prod-detail-img-sec al_center">
                     <Box>
+                     
                       <img
-                        src={productUrl || ProdImg}
+                        src={productUrl || ProdImg} // Use the parameter if available, or fallback to ProdImg
                         className="prod-decs-img"
                         alt="product name"
                         onClick={() => handleImageClick(productUrl || ProdImg)}
                       />
                     </Box>
-
-                    {/* <Box
-                      className="prod_img_bg"
-                      style={{
-                        backgroundImage: `url(${productUrl})`,
-                      }}
-                    ></Box> */}
                   </Box>
                 </Grid>
               </Grid>
             </Box>
+
           </Container>
 
           <Box mt={3}>
-            <Box className="stis" component="section">
+            <Box className="sti" component="section">
               <Grid container spacing={0} alignItems="center">
                 <Grid item lg={12} md={12} sm={12} xs={12}>
                   <Box className="primarytabbed">
                     <Container maxWidth="lg">
-                      <AppBar position="static" className="tabbedbar"></AppBar>
+                      <AppBar position="static" className="tabbedbar">
+                        <Tabs
+                          value={value}
+                          onChange={handleChange}
+                          indicatorColor="none"
+                          textColor="primary"
+                          variant="scrollable"
+                          scrollButtons="auto"
+                          aria-label="scrollable auto tabs example"
+                        >
+                          {/* productDetail in Tab */}
+                          {/* productDetail is object contains key and value My tab is key of objects */}
+                          {Object.entries(productDetail).map(
+                            ([key, value], index) => (
+                              <Tab label={key} {...a11yProps(index)} />
+                            )
+                          )}
+                        </Tabs>
+                      </AppBar>
                     </Container>
                   </Box>
                 </Grid>
@@ -300,11 +272,42 @@ export default function ProductDetail() {
               <Container maxWidth="lg">
                 {productDetail !== undefined &&
                 Object.keys(productDetail).length > 0 ? (
-                  Object.entries(productDetail).map(([key, value], index) => (
-                    <Box
-                      className="prod-detail-tab-content"
-                      dangerouslySetInnerHTML={{ __html: value }}
-                    />
+                  Object.keys(productDetail).map((property, index) => (
+                    <div key={index}>
+                      {/* Check if productDetail[property] is an array before mapping */}
+                      {Array.isArray(productDetail[property]) ? (
+                        <TabPanel value={value} index={index}>
+                          <Box>
+                            <Typography variant="h6" className="content fw">
+                              <ul>
+                                {productDetail[property].map(
+                                  (feature, subIndex) => (
+                                    <li key={subIndex}>{feature}</li>
+                                  )
+                                )}
+                              </ul>
+                            </Typography>
+                          </Box>
+                        </TabPanel>
+                      ) : (
+                        Object.keys(productDetail[property]).map(
+                          (key, subIndex) => (
+                            <TabPanel value={value} index={index}>
+                              <Box>
+                                <Typography variant="h6" className="content fw">
+                                  <ul>
+                                    <li>
+                                      {" "}
+                                      {key}: {productDetail[property][key]}{" "}
+                                    </li>
+                                  </ul>
+                                </Typography>
+                              </Box>
+                            </TabPanel>
+                          )
+                        )
+                      )}
+                    </div>
                   ))
                 ) : (
                   <h1>NotFound</h1>

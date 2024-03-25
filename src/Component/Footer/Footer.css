@@ -190,9 +190,13 @@
 }
 
 .mobile-btm-nav .MuiBottomNavigationAction-label {
-  font-size: 12px !important;
+  /* font-size: 12px !important;
   font-weight: 500 !important;
+  opacity: 1 !important; */
+  font-size: 11px !important;
+  font-weight: 600 !important;
   opacity: 1 !important;
+  color: #4d4f5d !important;
 }
 
 .mobile-btm-nav .MuiSvgIcon-root {
@@ -213,6 +217,9 @@
   }
   .mr-rgt-desk{
     margin-right: 0px !important;
+  }
+  .main-footer{
+    display: none !important;
   }
 }
 
@@ -238,4 +245,15 @@
     display: flex !important;
     justify-content:  center !important;
   }
+}
+
+
+
+
+.MuiBottomNavigation-root{
+  height: auto !important;
+}
+
+.MuiBottomNavigationAction-root {
+min-width: auto !important;
 }

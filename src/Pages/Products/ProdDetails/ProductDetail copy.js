@@ -112,7 +112,6 @@ export default function ProductDetail() {
 
   const [productDetail, setProductDetail] = React.useState([]);
   const [productUrl, setProductUrl] = React.useState("");
-  const [prodID, setProdID] = React.useState("");
   const fetchProductDetails = () => {
     // process.env.REACT_APP_API_URL + `api/v1/sub_category_det/${subproductName}`
     const data = {
@@ -128,18 +127,13 @@ export default function ProductDetail() {
         // let img_path = apiUrl + response.data.sub_category_header1_img;
         let img_path = response.data.sub_category_header1_img;
         setProductUrl(img_path);
-
-        let prod_id = response.data.sub_category_id;
-        setProdID(prod_id);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   };
 
-  // const { state, dispatch } = useCart();
-  const { state, dispatch } = useCart(); // Add this line
-
+  const { state, dispatch } = useCart();
   const handleAddToEnquiry = () => {
     // check if product is already in cart
     if (state.cart.includes(subproductName)) {
@@ -203,7 +197,7 @@ export default function ProductDetail() {
             </Container>
           </Box>
 
-          <Container maxWidth="lg"  className="sticky-bx">
+          <Container maxWidth="lg">
             <Box mt={2}>
               <Grid
                 container
@@ -214,16 +208,10 @@ export default function ProductDetail() {
                 <Grid item lg={10} md={10} sm={9} xs={12}>
                   <Box className="prod-detail-data-sec al_center">
                     <Box className="al_left">
-                      <Box className="fx_sb">
-                        <Typography variant="h5" className="col2 fw6">
-                          {" "}
-                          Product{" "}
-                        </Typography>
-                        <Typography variant="h6" className="prod_id_tag">
-                          {" "}
-                          ST-{prodID}
-                        </Typography>
-                      </Box>
+                      <Typography variant="h5" className="col2 fw6">
+                        {" "}
+                        Product{" "}
+                      </Typography>
                       <Typography variant="h3" className="col1 fw6 font1">
                         {" "}
                         {subproductName.replace(/%20/g, " ")}{" "}
@@ -284,7 +272,7 @@ export default function ProductDetail() {
           </Container>
 
           <Box mt={3}>
-            <Box className="stis" component="section">
+            <Box className="sti" component="section">
               <Grid container spacing={0} alignItems="center">
                 <Grid item lg={12} md={12} sm={12} xs={12}>
                   <Box className="primarytabbed">

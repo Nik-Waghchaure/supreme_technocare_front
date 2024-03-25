@@ -175,7 +175,7 @@ const handleSnackbarClose = () => {
         open={openSnackbar}
         autoHideDuration={5000}
         onClose={handleSnackbarClose}
-        message="send"
+        message={snackbarMessage}
       />
     </>
   );

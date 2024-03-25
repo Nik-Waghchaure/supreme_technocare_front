@@ -11,6 +11,7 @@ import HomeAboutUs from "./HomeSections/HomeAboutUs";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import Landing from "../Assets/Images/landing_gif.png";
+import HomeCertificates from "./HomeSections/HomeCertificates";
 
 
 
@@ -66,11 +67,7 @@ export default function Home() {
                   </Box>
                 </Grid>
 
-                {/* <Grid item lg={6} md={6} sm={10} xs={10}>
-                  <Box className="al_right mob_hide" mt={5}>
-                    <img src={Landing} className="landing_bannner" alt="Landing Page Banner" />
-                  </Box>
-                </Grid> */}
+           
               </Grid>
             </Container>
           </Box>
@@ -91,6 +88,12 @@ export default function Home() {
 
       <Box>
         <FeaturedProducts />
+      </Box>
+
+
+
+      <Box>
+        <HomeCertificates />
       </Box>
 
 

@@ -71,7 +71,7 @@ function App() {
 
             <Route element={<ProductLayout />}>
               <Route path="/products/:category" element={<SubProductsList />} />
-              <Route path="/products/:category/:productName" element={<ProductDetail />} />
+              <Route path="/productsdetails/:category/" element={<ProductDetail />} />
             </Route>
             {/* <Route path="/products/anaesthesia-machine" element={<SubProductsList />} />
                 <Route path="/products/anaesthesia-machine/operating-theatre" element={<SubProductsList />} />
@@ -79,7 +79,7 @@ function App() {
                 <Route path="/products/defibrillator" element={<SubProductsList />} /> */}
 
 
-            <Route path="/products" element={<Solutions />} />
+            {/* <Route path="/products" element={<Solutions />} /> */}
 
             {/* </Route> */}
 
