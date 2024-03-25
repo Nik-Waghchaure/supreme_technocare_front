@@ -2,14 +2,14 @@ import Offering1 from "../../Assets/Images/Solutions/1.jpg";
 import Offering2 from "../../Assets/Images/Solutions/2.jpg";
 import Offering3 from "../../Assets/Images/Solutions/delivery_room.jpg";
 import Offering4 from "../../Assets/Images/Solutions/4.jpg";
-import Offering5 from "../../Assets/Images/Solutions/5.jpg";
+import Offering5 from "../../Assets/Images/Solutions/oxygen.jpg";
 import Offering6 from "../../Assets/Images/Solutions/6.jpg";
 import Offering7 from "../../Assets/Images/Solutions/7.jpg";
 import Offering8 from "../../Assets/Images/Solutions/8.jpg";
 import Offering9 from "../../Assets/Images/Solutions/9.jpg";
-import Offering10 from "../../Assets/Images/Solutions/10.jpg";
-import Offering11 from "../../Assets/Images/Solutions/11.jpg";
-import Offering12 from "../../Assets/Images/Solutions/12.png";
+import Offering10 from "../../Assets/Images/Solutions/waste.jpg";
+import Offering11 from "../../Assets/Images/Solutions/cctv.jpg";
+import Offering12 from "../../Assets/Images/Solutions/advertise.jpg";
 import Offering13 from "../../Assets/Images/Solutions/13.jpg";
 
  

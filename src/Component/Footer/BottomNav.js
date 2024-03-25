@@ -7,7 +7,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-
+import EmojiObjectsOutlinedIcon from '@mui/icons-material/EmojiObjectsOutlined';
 
 export default function BottomNav() {
     const location = useLocation(); // Get the current location
@@ -16,7 +16,8 @@ export default function BottomNav() {
     const navLinks = [
       { path: '/', label: 'Home', icon: <HomeIcon /> },
       { path: '/about-us', label: 'About Us', icon: <HealthAndSafetyIcon /> },
-      { path: '/products/anaesthesia-machine', label: 'Products', icon: <ProductionQuantityLimitsIcon /> },
+      { path: '/products/Anaesthesia%20Machine', label: 'Products', icon: <ProductionQuantityLimitsIcon /> },
+      { path: '/solutions', label: 'Solutions', icon: <EmojiObjectsOutlinedIcon /> },
       { path: '/contact-us', label: 'Contact', icon: <PhoneIcon /> },
     ];
   
