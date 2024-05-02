@@ -20,7 +20,7 @@ import CallIcon from '@mui/icons-material/Call';
 
 const ContactUs = () => {
 
-
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
