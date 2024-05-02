@@ -40,7 +40,8 @@ const onSubmit = async (values) => {
   }
   try {
     // 'http://localhost:8888/api/v1/contact-us-form/'
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/contact-us-form/`, {
+    // const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/contact-us-form/`, {
+      const response = await fetch(`${apiUrl}/api/v1/contact-us-form/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
