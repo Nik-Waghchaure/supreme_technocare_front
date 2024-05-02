@@ -46,7 +46,8 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8888/api/v1/contact-us-form/', {
+      // const response = await fetch('http://localhost:8888/api/v1/contact-us-form/', {
+      const response = await fetch(`${apiUrl}/api/v1/contact-us-form/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
