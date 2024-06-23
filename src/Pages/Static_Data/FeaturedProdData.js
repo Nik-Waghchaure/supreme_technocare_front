@@ -1,10 +1,3 @@
-// import Solution1 from "../../../Assets/Images/products/featured_prod/x-ray.jpg";
-// import Solution2 from "../../../Assets/Images/products/featured_prop/infant-incubator.jpg";
-// import Solution3 from "../../../Assets/Images/products/featured_prop/anesthesia-machine.jpg";
-// import Solution4 from "../../../Assets/Images/products/featured_prop/patient-monitor.jpg";
-// import Solution5 from "../../../Assets/Images/products/featured_prop/operating-table.jpg";
-// import Solution6 from "../../../Assets/Images/products/featured_prop/hospital-bed.jpg";
-
 import Solution1 from "../../Assets/Images/products/featured_prod/x-ray.jpg";
 import Solution2 from "../../Assets/Images/products/featured_prod/infant-incubator.jpg";
 import Solution3 from "../../Assets/Images/products/featured_prod/anesthesia-machine.jpg";

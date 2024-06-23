@@ -1,13 +1,9 @@
-import { Container, Grid, Typography, Box, Button } from "@mui/material";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Container, Grid, Typography, Box } from "@mui/material";
+import React from "react"; 
 
 import ParticlesBgDesign from "../Component/Particles_Bg_Design";
 import DynamicBreadcrumbs from "../Component/DynamicBreadcrumbs";
-import ExploreUs from "../Component/ExploreUs";
-import HeadingBottom from "../Component/HeadingBottom";
-
-// import ABT1 from "../Assets/Images/about_us/who_we_are_2.jpg"
+import ExploreUs from "../Component/ExploreUs"; 
 import ABT1 from "../Assets/Images/homepage/about-us.jpg"
 import Mission from "../Assets/Images/about_us/mission.gif"
 import Vision from "../Assets/Images/about_us/vision.gif"
@@ -50,38 +46,13 @@ export default function AboutUs() {
         <Box mt={3}>
           <Container maxWidth="lg">
 
-
-            {/* <Box mb={3}>
-              <Grid container spacing={2} alignItems="center" justifyContent='center'>
-
-                <Grid item lg={6} md={8} sm={10} xs={10}>
-                  <Box className="al_center">
-
-                    <Box>
-                      <Typography variant="h2" className="col1 fw6 font1"> Who We Are </Typography>
-                    </Box>
-
-                    <Box>
-                      <HeadingBottom />
-                    </Box>
-
-                    <Box mt={3}>
-                      <Typography variant="h5" className="content fw5" gutterBottom>  <strong>Supreme Technocare</strong> is Commited to Provide best products that will help you to work efficiently.</Typography>
-                    </Box>
-
-                  </Box>
-                </Grid>
-
-              </Grid>
-            </Box> */}
-
+ 
 
 
             <Box mt={4}>
               <Grid container spacing={4} alignItems="top" justifyContent='center'>
                 <Grid item lg={6} md={6} sm={12} xs={12}>
-                  <Box>
-                    {/* <img src={ABT1} className="inside-banner" alt="About Us" /> */}
+                  <Box> 
                     <img src={ABT1} className="full-banner img-brd-rd" alt="About Us" />
                   </Box>
                 </Grid>

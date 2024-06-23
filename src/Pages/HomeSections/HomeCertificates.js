@@ -1,18 +1,11 @@
 import { Container, Grid, Typography, Box, IconButton } from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
-
-import ABT1 from "../../Assets/Images/homepage/about-us.jpg"
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import React from "react"; 
 import HeadingBottomProps from "../../Component/HeadingBottomProps";
-
 
 import Certificate1 from "../../Assets/Images/certificates/certificate1.png";
 import Certificate2 from "../../Assets/Images/certificates/certificate2.jpg";
 import Certificate3 from "../../Assets/Images/certificates/certificate3.png";
 import Certificate4 from "../../Assets/Images/certificates/certificate4.png";
-
-
 
 import Dialog from "@mui/material/Dialog";
 import MuiDialogTitle from "@mui/material/DialogTitle";
@@ -23,13 +16,6 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 export default function HomeCertificates() {
 
 
-  // const [open1, setOpen1] = React.useState(false);
-  // const handleClickOpen1 = () => {
-  //   setOpen1(true);
-  // };
-  // const handleClose1 = () => {
-  //   setOpen1(false);
-  // };
 
   const [open, setOpen] = React.useState(false);
   const [selectedCertificate, setSelectedCertificate] = React.useState(null);
@@ -42,8 +28,6 @@ export default function HomeCertificates() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const certificates = [Certificate1, Certificate2, Certificate3, Certificate4];
 
 
 
@@ -122,40 +106,6 @@ export default function HomeCertificates() {
       </Box >
 
 
-
-
-
-
-      {/* <Dialog
-        id="Enquiry_dialog"
-        onClose={handleClose1}
-        open={open1}
-        maxWidth="lg"
-      >
-        <MuiDialogTitle id="customized-dialog-title" onClose={handleClose1}>
-          <Box className="al_right">
-            <IconButton onClick={handleClose1}>
-              <HighlightOffIcon className="col3" />
-            </IconButton>
-          </Box>
-        </MuiDialogTitle>
-        <MuiDialogContent>
-          <Box className="al_center">
-            <Grid
-              container
-              spacing={2}
-              alignItems="baseline"
-              justifyContent="center"
-            >
-              <Grid item lg={12} md={12} sm={12} xs={12}>
-                <Box>
-                  <img src={Certificate1} className="full-banner img-brd-rd" alt="Certificates" />
-                </Box>
-              </Grid>
-            </Grid>
-          </Box>
-        </MuiDialogContent>
-      </Dialog> */}
 
       <Dialog
         id="Enquiry_dialog"

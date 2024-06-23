@@ -10,29 +10,29 @@ import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import EmojiObjectsOutlinedIcon from '@mui/icons-material/EmojiObjectsOutlined';
 
 export default function BottomNav() {
-    const location = useLocation(); // Get the current location
-  
-    // Map each route path to its corresponding icon
-    const navLinks = [
-      { path: '/', label: 'Home', icon: <HomeIcon /> },
-      { path: '/about-us', label: 'About Us', icon: <HealthAndSafetyIcon /> },
-      { path: '/products/Anaesthesia%20Machine', label: 'Products', icon: <ProductionQuantityLimitsIcon /> },
-      { path: '/solutions', label: 'Solutions', icon: <EmojiObjectsOutlinedIcon /> },
-      { path: '/contact-us', label: 'Contact', icon: <PhoneIcon /> },
-    ];
-  
-    return (
-      <BottomNavigation showLabels className='mobile-btm-nav'>
-        {navLinks.map((navLink) => (
-          <NavLink
-            key={navLink.path}
-            to={navLink.path}
-            className={location.pathname === navLink.path ? 'active-bottom-nav' : ''}
-          >
-            <BottomNavigationAction label={navLink.label} icon={navLink.icon} />
-          </NavLink>
-        ))}
-      </BottomNavigation>
-    );
-  }
-  
+  const location = useLocation(); // Get the current location
+ 
+  const navLinks = [
+    { path: '/', label: 'Home', icon: <HomeIcon /> },
+    { path: '/about-us', label: 'About Us', icon: <HealthAndSafetyIcon /> },
+    { path: '/products/Anaesthesia%20Machine', label: 'Products', icon: <ProductionQuantityLimitsIcon /> },
+    { path: '/solutions', label: 'Solutions', icon: <EmojiObjectsOutlinedIcon /> },
+    { path: '/contact-us', label: 'Contact', icon: <PhoneIcon /> },
+  ];
+
+  return ( 
+
+    <BottomNavigation className='mobile-btm-nav'>
+      {navLinks.map((navLink) => (
+        <NavLink
+          key={navLink.path}
+          to={navLink.path}
+          className={location.pathname === navLink.path ? 'active-bottom-nav' : ''}
+        >
+          <BottomNavigationAction label={navLink.label} icon={navLink.icon} />
+        </NavLink>
+      ))}
+    </BottomNavigation>
+
+  );
+}

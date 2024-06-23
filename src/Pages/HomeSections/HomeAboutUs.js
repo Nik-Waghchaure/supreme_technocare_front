@@ -1,11 +1,7 @@
 import { Container, Grid, Typography, Box, Button } from "@mui/material";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-
-import HeadingBottom from "../../Component/HeadingBottom";
-
-
-// import ABT1 from "../../Assets/Images/about_us/who_we_are_3d.png"
+import React from "react";
+import { Link } from "react-router-dom"; 
+ 
 import ABT1 from "../../Assets/Images/homepage/about-us.jpg"
 
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -24,23 +20,7 @@ export default function HomeAboutUs() {
 
 
           <Container maxWidth="lg">
-            {/* <Grid container spacing={2} alignItems="flex-start" justifyContent='center'>
-
-              <Grid item lg={12} md={12} sm={12} xs={12}>
-                <Box className="al_center">
-                  <Box>
-                    <Typography variant="h6" className="col2 fw6" gutterBottom> About Us </Typography>
-                    <Typography variant="h2" className="col1 fw6 font1"> Who We Are </Typography>
-                  </Box>
-                  <Box pt={1}>
-                    <HeadingBottom />
-                  </Box>
-
-                </Box>
-              </Grid>
-            </Grid> */}
-
-
+          
 
             <Box mt={4}>
               <Grid container spacing={4} alignItems="flex-start" justifyContent='center'>

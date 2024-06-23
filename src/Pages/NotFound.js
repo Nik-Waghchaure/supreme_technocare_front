@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Grid, Container } from "@mui/material";
-
 import PNF from "../Assets/Images/under_construction.jpg"
 
 const NotFound = () => {
@@ -18,7 +17,7 @@ const NotFound = () => {
               <Grid item lg={12} md={12} sm={12} xs={12}>
                 <Box className="al_center">
 
-                  <img src={PNF} className="under-construction" />
+                  <img src={PNF} className="under-construction" alt="Under Construction"/>
 
 
                 </Box>

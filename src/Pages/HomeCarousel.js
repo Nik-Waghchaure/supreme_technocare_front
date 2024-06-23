@@ -10,11 +10,9 @@ import "react-multi-carousel/lib/styles.css";
 
 import Carousel_1 from "../Assets/Images/homepage/caraousel_1.jpg";
 import Carousel_2 from "../Assets/Images/homepage/caraousel_2.jpg";
-import Carousel_3 from "../Assets/Images/homepage/caraousel_3.jpg";
-import HeadingBottom from "../Component/HeadingBottom";
+import Carousel_3 from "../Assets/Images/homepage/caraousel_3.jpg"; 
 
-
-import Solu1 from "../Assets/Images/Solutions/solution.png";
+ 
 import Solutions from "./Solutions";
 import FeaturedProducts from "./FeaturedProducts";
 
@@ -72,13 +70,13 @@ export default function Home() {
                   <Grid item lg={6} md={6} sm={10} xs={10}>
                     <Box className="text_animated">
                       <Typography variant="h1" className="col1 fw6" gutterBottom>
-                      YOUR <span className="col2"> HEALTH </span> IS ALWAYS OUR GOAL
+                        YOUR <span className="col2"> HEALTH </span> IS ALWAYS OUR GOAL
                       </Typography>
 
                       <Typography variant="h2" className="col3" gutterBottom>
-                      ARI dedicates to make better healthcare solutions for people around the world.
+                        ARI dedicates to make better healthcare solutions for people around the world.
                       </Typography>
-                      
+
                       <Link to="/#">
                         <Button variant="contained" className='rbtn_sm'>
                           Learn More
@@ -93,22 +91,22 @@ export default function Home() {
               </Container>
             </Box>
           </>
-          
- 
+
+
           <>
             <Box className="mainsection1" component="section" style={{ backgroundImage: "url(" + Carousel_2 + ")" }}>
               <Container maxWidth="lg">
                 <Grid container spacing={1} alignItems="flex-start" justifyContent='center'>
                   <Grid item lg={6} md={6} sm={10} xs={10}>
-                  <Box className="text_animated">
+                    <Box className="text_animated">
                       <Typography variant="h1" className="col1 fw6" gutterBottom>
-                      PROFESSIONAL <span className="col2"> MEDICAL </span> SOLUTIONS
+                        PROFESSIONAL <span className="col2"> MEDICAL </span> SOLUTIONS
                       </Typography>
 
                       <Typography variant="h2" className="col3" gutterBottom>
-                      ARI provides one-stop solutions for hospital, clinic and laboratory, and also installation guidance, operation training, maintenance and marketing support.
+                        ARI provides one-stop solutions for hospital, clinic and laboratory, and also installation guidance, operation training, maintenance and marketing support.
                       </Typography>
-                      
+
                       <Link to="/#">
                         <Button variant="contained" className='rbtn_sm'>
                           Learn More
@@ -123,7 +121,7 @@ export default function Home() {
               </Container>
             </Box>
           </>
- 
+
 
           <>
             <Box className="mainsection1" component="section" style={{ backgroundImage: "url(" + Carousel_3 + ")" }}>
@@ -132,14 +130,14 @@ export default function Home() {
                   <Grid item lg={5} md={5} sm={10} xs={10}>
                   </Grid>
                   <Grid item lg={7} md={7} sm={10} xs={10}>
-                  <Box className="text_animated">
+                    <Box className="text_animated">
                       <Typography variant="h1" className="col1 fw6" gutterBottom>
-                      QUALITY SERVICE,<span className="col2"> CUSTOMERS </span> FIRST
+                        QUALITY SERVICE,<span className="col2"> CUSTOMERS </span> FIRST
                       </Typography>
 
                       <Typography variant="h2" className="col3" gutterBottom>
-                      With professional sales team and experienced engineers, ARI will offer quick and detailed response to each product Enquiry and service request within 24 hours. </Typography>
-                      
+                        With professional sales team and experienced engineers, ARI will offer quick and detailed response to each product Enquiry and service request within 24 hours. </Typography>
+
                       <Link to="/#">
                         <Button variant="contained" className='rbtn_sm'>
                           Learn More
@@ -157,104 +155,17 @@ export default function Home() {
 
         </CarouselMulti>
       </Box>
+ 
 
 
-      {/* <Box className="section bg3" component='section'>
-        <Box mb={5}>
-
-          <Container maxWidth>
-            <Grid container spacing={2} alignItems="flex-start" justifyContent='center'>
+      <Box>
+        <Solutions />
+      </Box>
 
 
-              <Grid item lg={12} md={12} sm={12} xs={12}>
-                <Box className="al_center">
-
-
-                  <Box>
-                    <Typography variant="h2" className="col2 fw6">Solutions</Typography>
-                  </Box>
-                  <Box>
-                    <HeadingBottom />
-                  </Box>
-
-                </Box>
-              </Grid>
-
-
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2 al_center">
-                  <Box> 
-                    <img src={Solu1} className="soution-image" alt="solutions here" />
-                  </Box>
-
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-              <Grid item lg={3} md={3} sm={6} xs={12}>
-                <Box className="whitebx bxsh2">
-                  <Typography variant="h5" className="col1 fw5"> Card Heading </Typography>
-                </Box>
-              </Grid>
-
-            </Grid>
-          </Container>
-
-        </Box>
-      </Box> */}
-
-
-
-<Box>
-  <Solutions/>
-</Box>
-
-
-<Box>
-  <FeaturedProducts/>
-</Box>
+      <Box>
+        <FeaturedProducts />
+      </Box>
 
     </>
   );

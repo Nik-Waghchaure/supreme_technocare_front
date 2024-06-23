@@ -1,7 +1,5 @@
 import React from 'react'
-import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
-import RemoveIcon from '@mui/icons-material/Remove';
-
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined'; 
 import { Box, } from '@mui/material';
 
 
@@ -10,12 +8,12 @@ const HeadingBottom = () => {
         <>
 
 
-<Box className="flx js_c">
-   <Box className='line bg3'></Box>
-    <MonitorHeartOutlinedIcon fontSize='small' className='hdbtmico'/>
-   <Box className='line bg3'></Box>
-    
-</Box>
+            <Box className="flx js_c">
+                <Box className='line bg3'></Box>
+                <MonitorHeartOutlinedIcon fontSize='small' className='hdbtmico' />
+                <Box className='line bg3'></Box>
+
+            </Box>
 
         </>
     )

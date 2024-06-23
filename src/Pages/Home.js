@@ -1,43 +1,19 @@
 import { Container, Grid, Typography, Box, Button } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-  
-// import Solutions from "./HomeSections/HomeSolutions";
 import FeaturedProducts from "./HomeSections/FeaturedProducts";
 import HomeSolutions from "./HomeSections/HomeSolutions";
 import ExploreUs from "../Component/ExploreUs";
 import HomeAboutUs from "./HomeSections/HomeAboutUs";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
-import Landing from "../Assets/Images/landing_gif.png";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'; 
 import HomeCertificates from "./HomeSections/HomeCertificates";
 
 
 
 
 export default function Home() {
-
-
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
-
+ 
 
   return (
     <>
@@ -67,7 +43,7 @@ export default function Home() {
                   </Box>
                 </Grid>
 
-           
+
               </Grid>
             </Container>
           </Box>

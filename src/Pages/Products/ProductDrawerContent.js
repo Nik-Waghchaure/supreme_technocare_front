@@ -19,14 +19,12 @@ export const ProductDrawerContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Fetch data from the API using Axios
-    // 'http://localhost:8888/api/v1/category/'
     axios.get(`${process.env.REACT_APP_API_URL}/api/v1/category/`)
       .then(response => {
         setCategoryData(response.data);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       });
   }, []);
 
@@ -34,20 +32,13 @@ export const ProductDrawerContent = () => {
     setExpanded(newExpanded ? panel : false);
   };
 
-
-
-
-
-
-
   return (
     <>
       <Box style={{ padding: '16px' }} pt={1}>
         <Box id='main_accordian'>
           {Object.entries(categoryData).map(([category, products], index) => (
-            <>
+            <React.Fragment key={category}>
               <Accordion
-                key={index}
                 expanded={expanded === `panel${index}`}
                 onChange={handleChange(`panel${index}`)}
               >
@@ -80,11 +71,9 @@ export const ProductDrawerContent = () => {
                     ))}
                   </Box>
                 </AccordionDetails>
-
               </Accordion>
-
               <Box m={1}></Box>
-            </>
+            </React.Fragment>
           ))}
         </Box>
       </Box>

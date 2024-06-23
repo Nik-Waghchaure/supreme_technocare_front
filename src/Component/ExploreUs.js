@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Container, Typography, Grid, Button } from '@mui/material'
-import Particles_Bg_Design from './Particles_Bg_Design'
+import { Box, Container, Typography, Grid, Button } from '@mui/material' 
 import { Link } from 'react-router-dom'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 

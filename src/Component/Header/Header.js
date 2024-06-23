@@ -6,8 +6,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton'; 
 import CloseIcon from "@mui/icons-material/Close";
 // import DPA from "../asset/images/dpa_logo.png"
 import { Link } from 'react-router-dom';
@@ -19,8 +18,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// Acordian Ended
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+// Acordian Ended 
 
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import EnquiryDialog from './EnquiryDialog';
@@ -31,11 +29,7 @@ import LOGO from "../../Assets/Images/main_logo.png"
 
 export default function Header() {
 
-
-  // change styling of Active page on click
-  // const [activePage, setActivePage] = useState('');
-  // change styling of Active page on click
-
+ 
 
   // Drawer Started
   const [state, setState] = React.useState({});
@@ -63,8 +57,7 @@ export default function Header() {
   const location = useLocation();
   const [activePage, setActivePage] = useState('');
 
-  useEffect(() => {
-    // Extract the path segment to determine the active page
+  useEffect(() => { 
     const pathSegment = location.pathname.split('/')[1];
     setActivePage(pathSegment || 'home'); // Set a default value, e.g., 'home'
   }, [location.pathname]);
@@ -80,9 +73,8 @@ export default function Header() {
           <Toolbar className='Appbar_height'>
 
             <Box component="div" sx={{ flexGrow: 1 }}>
-              <Link to="/" className={activePage === 'home' ? 'active' : ''} onClick={() => setActivePage('home')}>
-                {/* <Typography variant='h2' className='col1 fw6 font1'> LOGO </Typography> */}
-                <img src={LOGO} className="logo" />
+              <Link to="/" className={activePage === 'home' ? 'active' : ''} onClick={() => setActivePage('home')}> 
+                <img src={LOGO} className="logo" alt='Supreme Technocare'/>
               </Link>
             </Box>
 
@@ -111,36 +103,7 @@ export default function Header() {
 
               <RouterLink to="/contact-us" className={activePage === 'contact-us' ? 'active' : ''}>
                 <Button className="menus" disableRipple>Contact Us</Button>
-              </RouterLink>
-
-              {/* <RouterLink to="#" className={activePage === 'Enquiry' ? 'activebtn' : ''}>
-                <Button className="menus inq_btn" startIcon={<CallOutlinedIcon/>}>Enquiry</Button>
-              </RouterLink> */}
-
-
-
-
-
-
-
-
-              {/* <Link to="/about-us" className={activePage === 'about-us' ? 'active' : ''} onClick={() => setActivePage('about-us')}>
-                <Button className="menus"  disableRipple>About Us</Button>
-              </Link>   
-
-              <Link to="/products" className={activePage === 'products' ? 'active' : ''} onClick={() => setActivePage('products')}>
-                <Button className="menus"  disableRipple>Products</Button>
-              </Link>
-
-
-              <Link to="/solutions" className={activePage === 'solutions' ? 'active' : ''} onClick={() => setActivePage('solutions')}>
-                <Button className="menus"  disableRipple>Solutions </Button>
-              </Link> 
-
-              <Link to="/contact-us" className={activePage === 'contact-us' ? 'active' : ''} onClick={() => setActivePage('contact-us')}>
-                <Button className="menus"  disableRipple>Contact Us</Button>
-              </Link> */}
-
+              </RouterLink> 
 
             </Box>
 
@@ -153,10 +116,7 @@ export default function Header() {
 
             <Box className='mobileviewmenu'>
               {['right'].map((anchor) => (
-                <React.Fragment  >
-                  {/* <IconButton aria-label="delete" onClick={toggleDrawer(anchor, true)}>
-                    <MenuIcon fontSize="small" className='col1' />
-                  </IconButton> */}
+                <React.Fragment key={anchor} > 
                   <Drawer
                     className='drawer'
                     anchor={anchor}

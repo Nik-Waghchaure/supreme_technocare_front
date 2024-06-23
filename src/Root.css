@@ -1,10 +1,9 @@
-@import url('./Styles.css');
-@import url('./Assets/CSS/PrimaryTabbed.css');
-@import url('./Assets/CSS/Textfields.css');
-@import url('./Assets/CSS/Accordian.css');
-@import url('./Assets/CSS/ReactCarousel.css');
-@import url('./Assets/CSS/Solutions.css');
-
+@import url("./Styles.css");
+@import url("./Assets/CSS/PrimaryTabbed.css");
+@import url("./Assets/CSS/Textfields.css");
+@import url("./Assets/CSS/Accordian.css");
+@import url("./Assets/CSS/ReactCarousel.css");
+@import url("./Assets/CSS/Solutions.css");
 
 :root {
   --black: #000;

@@ -1,15 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import AppBar from '@mui/material/AppBar';
+import Drawer from '@mui/material/Drawer'; 
 import CssBaseline from '@mui/material/CssBaseline';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import { ProductDrawerContent } from './ProductDrawerContent';
-
-import { Route, Routes } from 'react-router-dom';
-
-
+import Toolbar from '@mui/material/Toolbar'; 
+import { ProductDrawerContent } from './ProductDrawerContent'; 
 
 
 const drawerWidth = 320;
@@ -38,7 +32,7 @@ export default function Products() {
 
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                
+
 
 
             </Box>

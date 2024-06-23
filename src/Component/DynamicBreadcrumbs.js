@@ -1,17 +1,16 @@
 import React from 'react';
 import { Breadcrumbs, Typography } from '@mui/material';
-import { useLocation, Link } from 'react-router-dom'; // If using React Router
-import { ToastContainer } from 'react-toastify';
+import { useLocation, Link } from 'react-router-dom';
 function DynamicBreadcrumbs() {
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
 
   // Split the pathname into segments
   const pathSegments = location.pathname.split('/').filter((segment) => segment !== '');
 
   return (
-     
+
     <Breadcrumbs maxItems={3} aria-label="breadcrumb">
-      
+
       <Link to="/">
         Home
       </Link>
@@ -21,8 +20,8 @@ function DynamicBreadcrumbs() {
         return (
           <Link key={segment} color={isLastSegment ? 'textPrimary' : 'inherit'} to={url}>
             <Typography variant='h5' className='breadcrumb_link'>
-           
-            {segment.replace(/%20/g, ' ')}
+
+              {segment.replace(/%20/g, ' ')}
             </Typography>
           </Link>
         );

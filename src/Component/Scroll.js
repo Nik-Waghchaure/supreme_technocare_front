@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react' 
+import React, { useState, useEffect } from 'react'
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import IconButton from '@mui/material/IconButton';
 
- 
+
 
 const Scroll = ({
     showBelow,
 }) => {
 
- 
+
 
     const [show, setShow] = useState(showBelow ? false : true)
 
@@ -34,7 +34,7 @@ const Scroll = ({
     return (
         <div>
             {show &&
-                <IconButton onClick={handleClick}   aria-label="to top" component="span">
+                <IconButton onClick={handleClick} aria-label="to top" component="span">
                     <ExpandLessIcon />
                 </IconButton>
             }

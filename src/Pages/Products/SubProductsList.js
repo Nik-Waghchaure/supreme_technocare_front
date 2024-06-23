@@ -2,21 +2,19 @@ import {
   Container,
   Grid,
   Typography,
-  Box,
-  Button,
+  Box, 
   Divider,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios"; // Import axios
-
-import HeadingBottom from "../../Component/HeadingBottom";
+ 
 import DynamicBreadcrumbs from "../../Component/DynamicBreadcrumbs";
-import Particles_Bg_Design from "../../Component/Particles_Bg_Design";
+import ParticlesBgDesign from "../../Component/Particles_Bg_Design";
 import { useLocation } from "react-router-dom";
 
 export default function SubProductsList() {
-  const { slug } = useParams();
+  // const { slug } = useParams();
   const [subProductList, setSubProductList] = useState([]);
   const location = useLocation();
   const productName = location.pathname.split("/")[2];
@@ -44,7 +42,7 @@ export default function SubProductsList() {
           <Box className="subpagehead_sm">
             <Box>
               {" "}
-              <Particles_Bg_Design />{" "}
+              <ParticlesBgDesign />{" "}
             </Box>
             <Container>
               <Grid
@@ -72,30 +70,7 @@ export default function SubProductsList() {
 
           <Container maxWidth="lg">
             <Box className="sub-prod-card-bx" mt={2}>
-              {/* <Grid container spacing={2} alignItems="flex-start" justifyContent='flex-start'>
-                {subProductList.map((subProduct) => (
-                  <Grid item lg={3} md={3} sm={6} xs={12} key={subProduct.id}>
-                    <Box className="product-box">
-                      <Link to={`/products/${encodeURIComponent(subProduct.sub_category_name)}/product-details`}>
-                        <Box className="al_right flx end">
-                          <Typography variant="h6" className="prod_id_tag"> {subProduct.id} </Typography>
-                        </Box>
-                       
-                       <Box
-  className="prod_img_bg"
-  style={{ backgroundImage: `url(https://ari-cn.com${subProduct.sub_category_img})` }}
-></Box>
-
-                        <Divider />
-                        <Box className="al_center" mt={2}>
-                          <Typography variant="h6" className="col1 fw6"> {subProduct.sub_category_name} </Typography>
-                        </Box>
-                      </Link>
-                    </Box>
-                  </Grid>
-                ))}
-              </Grid> */}
-
+              
               <Grid
                 container
                 spacing={2}
@@ -105,14 +80,14 @@ export default function SubProductsList() {
                 {subProductList.map((subProduct) => (
                   <Grid item lg={3} md={3} sm={6} xs={12} key={subProduct.id}>
                     <Box className="product-box">
-                      {console.log(subProduct.sub_category_name)}
+                      {/* {console.log(subProduct.sub_category_name)} */}
                       <Link
                         to={`/productsdetails/${productName}/?product_name=${subProduct.sub_category_name}`}
                       >
                         <Box className="al_right flx end">
                           <Typography variant="h6" className="prod_id_tag">
                             {" "}
-                           ST-{subProduct.id}{" "}
+                            {subProduct.id}{" "}
                           </Typography>
                         </Box>
                         <Box
@@ -129,8 +104,7 @@ export default function SubProductsList() {
                           </Typography>
                         </Box>
                       </Link>
-                      {/* Call fetchSubProducts with new product name on click */}
-                      {/* <Button onClick={() => fetchSubProducts(subProduct.sub_category_name)}>Load Data</Button> */}
+                     
                     </Box>
                   </Grid>
                 ))}

@@ -16,11 +16,13 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 
 const ContactUs = () => {
 
-  const apiUrl = process.env.REACT_APP_API_URL;
+
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
 
@@ -46,7 +48,6 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
-      // const response = await fetch('http://localhost:8888/api/v1/contact-us-form/', {
       const response = await fetch(`${apiUrl}/api/v1/contact-us-form/`, {
         method: 'POST',
         headers: {
@@ -68,7 +69,7 @@ const ContactUs = () => {
         setOpenSnackbar(true);
       }
     } catch (error) {
-      console.error('Error:', error);
+      // console.error('Error:', error);
       // alert('Failed to send email. Please try again later.');
       setSnackbarMessage('Failed to send email. Please try again later.');
       setOpenSnackbar(true);
